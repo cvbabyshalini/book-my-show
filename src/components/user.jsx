@@ -8,7 +8,6 @@ class User extends React.Component {
             planet: "earth",
         };
     }
-    
     render(){
         return(
             <div>
