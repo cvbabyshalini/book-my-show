@@ -1,17 +1,11 @@
-import User from "./components/user"
-
-//JSX
 function App() {
-  return ( 
-  <div>
-    <h1>Users</h1>
-    <User name="Shalini" description="FSWD" />
-    <User name="Yoshita" description="CIVILS" />
-  </div>
+  return (
+    <div className="App p-10">
+      <button className="border-2 px-2 py-1 border-blue-500 rounded bg-blue-500 text-white hover:bg-transparent hover:border-2 hover:text-blue-500 outline-none focus:outline-none focus:ring focus:border-blue-300">
+        Hello Tailwind
+      </button>
+
+    </div>
   );
 }
-
 export default App;
-
-// Props - A data that is being passed from one component to another
-// state - A set of data that an individual component holds.
