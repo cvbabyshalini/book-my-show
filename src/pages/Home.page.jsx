@@ -31,7 +31,7 @@ const HomePage = () => {
               images={TempPosters}
               title="Premieres"
               subtitle="Brand new releases every friday"
-              isDark
+              isDark={false}
             />
           </div>
         </div>
