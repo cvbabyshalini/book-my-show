@@ -4,6 +4,7 @@ const settings = {
   slidesToShow: 5,
   slidesToScroll: 4,
   initialSlide: 0,
+  
   responsive: [
     {
       breakpoint: 1024,
