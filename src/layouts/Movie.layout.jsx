@@ -20,7 +20,7 @@ useEffect(()=> {
     };
     requestMovie();
 
-}, []);
+}, [id]);
 
     return (
         <>
