@@ -50,7 +50,7 @@ export const Movie = () => {
     const settings = {
         infinite: false,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 4,
         initialSlide: 0,
         responsive: [
@@ -65,7 +65,7 @@ export const Movie = () => {
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 2,
                     initialSlide: 2,
                 },
@@ -98,7 +98,7 @@ export const Movie = () => {
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 5,
+                    slidesToShow: 4,
                     slidesToScroll: 2,
                     initialSlide: 2,
                 },
@@ -168,6 +168,10 @@ export const Movie = () => {
                             />
                         ))}
                     </Slider>
+                </div>
+
+                <div className="my-8">
+                    <hr />
                 </div>
 
                 <div className="my-8">

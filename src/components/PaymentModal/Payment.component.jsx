@@ -8,13 +8,32 @@ export default function PaymentModal({ isOpen, setIsOpen, price }) {
     setIsOpen(false)
   }
 
+  const launchRazorPay = () => {
+      let options = {
+        key: "rzp_test_dQkfXovIyeAlb1",
+        amount: price * 100,
+        currency: "INR",
+        name: "Book My Show Clone",
+        description: "Movie Purchase or Rental",
+        image: "https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png",
+        handler: () => {
+          setIsOpen(false);
+          alert("Payment Done");
+        },
+        theme: {color: "#c4242d"},
+      };
+
+      let razorPay = new window.Razorpay(options);
+      razorPay.open();
+  };
+
   return (
     <>
       
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 z-10 overflow-y-auto"
+          className="fixed inset-0 z-10 overflow-y-auto z-50"
           onClose={closeModal}
         >
           <div className="min-h-screen px-4 text-center">
@@ -63,13 +82,13 @@ export default function PaymentModal({ isOpen, setIsOpen, price }) {
                   <button
                     type="button"
                     className="w-full inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
-                    onClick={closeModal}
+                    onClick={launchRazorPay}
                   >
                     Pay ₹{price}
                   </button>
                   <button
                     type="button"
-                    className="w-full inline-flex justify-center px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
+                    className="mt-3 w-full inline-flex justify-center px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
                     onClick={closeModal}
                   >
                     Cancel Payment
